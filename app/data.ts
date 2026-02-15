@@ -50,6 +50,13 @@ export const PROJECTS: Project[] = [
     video: 'https://payfollowup.vercel.app',
     id: 'project3',
   },
+  {
+    name: 'Dalkkumi Shop',
+    description: 'Your destination for K-pop imports and branded goods, with preorders for albums, lightsticks, and official merchandise.',
+    link: 'https://dalkkumi-shop-final.vercel.app',
+    video: 'https://dalkkumi-shop-final.vercel.app',
+    id: 'project4',
+  },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
