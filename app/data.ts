@@ -43,6 +43,13 @@ export const PROJECTS: Project[] = [
     video: 'https://expirelinkapp.vercel.app',
     id: 'project2',
   },
+  {
+    name: 'PayFollowUp',
+    description: 'Stop chasing invoices manually. PayFollowUp sends professional payment reminders so you can focus on growing your business.',
+    link: 'https://payfollowup.vercel.app',
+    video: 'https://payfollowup.vercel.app',
+    id: 'project3',
+  },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
