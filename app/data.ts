@@ -2,7 +2,7 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string | null
+  video: string
   id: string
 }
 
@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
     description:
       'AI-powered video meeting platform that allows humans to talk face-to-face with intelligent virtual assistants.',
     link: 'https://github.com/yusupscopes/AvaMeet',
-    video: null,
+    video: 'https://github.com/yusupscopes/AvaMeet',
     id: 'project1',
   },
 ]
