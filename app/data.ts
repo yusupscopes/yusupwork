@@ -36,6 +36,13 @@ export const PROJECTS: Project[] = [
     video: 'https://github.com/yusupscopes/AvaMeet',
     id: 'project1',
   },
+  {
+    name: 'ExpireLink',
+    description: 'Create short links that automatically expire — no signup, no tracking bloat.',
+    link: 'https://expirelinkapp.vercel.app',
+    video: 'https://expirelinkapp.vercel.app',
+    id: 'project2',
+  },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
