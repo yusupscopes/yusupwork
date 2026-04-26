@@ -4,6 +4,15 @@ import createMDX from '@next/mdx';
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.cosmos.so',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 const withMDX = createMDX({
