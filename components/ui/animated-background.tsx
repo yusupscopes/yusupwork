@@ -1,14 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { AnimatePresence, Transition, motion } from 'motion/react'
-import {
-  Children,
-  cloneElement,
-  ReactElement,
-  useEffect,
-  useState,
-  useId,
-} from 'react'
+import { Children, cloneElement, ReactElement, useState, useId } from 'react'
 
 export type AnimatedBackgroundProps = {
   children:
@@ -29,22 +22,20 @@ export function AnimatedBackground({
   transition,
   enableHover = false,
 }: AnimatedBackgroundProps) {
-  const [activeId, setActiveId] = useState<string | null>(null)
+  const [internalActiveId, setInternalActiveId] = useState<string | null>(
+    () => (defaultValue !== undefined ? defaultValue : null),
+  )
   const uniqueId = useId()
 
+  const activeId =
+    defaultValue !== undefined ? defaultValue : internalActiveId
+
   const handleSetActiveId = (id: string | null) => {
-    setActiveId(id)
-
-    if (onValueChange) {
-      onValueChange(id)
+    if (defaultValue === undefined) {
+      setInternalActiveId(id)
     }
+    onValueChange?.(id)
   }
-
-  useEffect(() => {
-    if (defaultValue !== undefined) {
-      setActiveId(defaultValue)
-    }
-  }, [defaultValue])
 
   return Children.map(children, (child: any, index) => {
     const id = child.props['data-id']

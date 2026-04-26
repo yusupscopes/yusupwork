@@ -1,1 +1,1 @@
-export const WEBSITE_URL = 'https://yusupwork.vercel.app'
+export const WEBSITE_URL = 'https://yusupwork.com'

@@ -20,6 +20,7 @@ import { createPortal } from 'react-dom'
 import { cn } from '@/lib/utils'
 import { XIcon } from 'lucide-react'
 import useClickOutside from '@/hooks/useClickOutside'
+import { useIsClient } from '@/hooks/use-is-client'
 
 export type MorphingDialogContextType = {
   isOpen: boolean
@@ -228,12 +229,7 @@ export type MorphingDialogContainerProps = {
 
 function MorphingDialogContainer({ children }: MorphingDialogContainerProps) {
   const { isOpen, uniqueId } = useMorphingDialog()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    return () => setMounted(false)
-  }, [])
+  const mounted = useIsClient()
 
   if (!mounted) return null
 

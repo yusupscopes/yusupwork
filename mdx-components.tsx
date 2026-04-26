@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types'
 import { ComponentPropsWithoutRef } from 'react'
 import { highlight } from 'sugar-high'
+import Image from 'next/image'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -15,9 +16,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       caption: string
     }) => {
       return (
-        <figure>
-          <img src={src} alt={alt} className="rounded-xl" />
-          <figcaption className="text-center">{caption}</figcaption>
+        <figure className="relative aspect-video w-full overflow-hidden rounded-xl">
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, 576px"
+          />
+          <figcaption className="mt-2 text-center">{caption}</figcaption>
         </figure>
       )
     },
