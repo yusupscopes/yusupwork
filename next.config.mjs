@@ -5,6 +5,15 @@ const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.cosmos.so',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 const withMDX = createMDX({

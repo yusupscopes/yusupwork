@@ -12,16 +12,17 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://yusupwork.vercel.app/'),
+  metadataBase: new URL('https://yusupwork.com'),
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   title: {
     default: 'Yusup Maulana - Software Engineer',
-    template: '%s | Yusup Maulana'
+    template: '%s | Yusup Maulana',
   },
-  description:  'A personal portfolio website showcasing my journey and work as a software engineer.',
-};
+  description:
+    'A personal portfolio website showcasing my journey and work as a software engineer.',
+}
 
 const geist = Geist({
   variable: '--font-geist',
