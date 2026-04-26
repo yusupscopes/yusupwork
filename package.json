@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint ."
+    "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
+    "start": "node .next/standalone/server.js",
+    "lint": "next lint"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
