@@ -29,32 +29,11 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'AvaMeet',
-    description:
-      'AI-powered video meeting platform that allows humans to talk face-to-face with intelligent virtual assistants.',
-    link: 'https://github.com/yusupscopes/AvaMeet',
-    video: 'https://github.com/yusupscopes/AvaMeet',
-    id: 'project1',
-  },
-  {
-    name: 'ExpireLink',
-    description: 'Create short links that automatically expire — no signup, no tracking bloat.',
-    link: 'https://expirelinkapp.vercel.app',
-    video: 'https://expirelinkapp.vercel.app',
-    id: 'project2',
-  },
-  {
-    name: 'PayFollowUp',
-    description: 'Stop chasing invoices manually. PayFollowUp sends professional payment reminders so you can focus on growing your business.',
-    link: 'https://payfollowup.vercel.app',
-    video: 'https://payfollowup.vercel.app',
-    id: 'project3',
-  },
-  {
     name: 'Dalkkumi Shop',
-    description: 'Your destination for K-pop imports and branded goods, with preorders for albums, lightsticks, and official merchandise.',
-    link: 'https://dalkkumi-shop-final.vercel.app',
-    video: 'https://dalkkumi-shop-final.vercel.app',
+    description:
+      'Your destination for K-pop imports and branded goods, with preorders for albums, lightsticks, and official merchandise.',
+    link: 'https://dalkkumi-shop.yusupwork.com/',
+    video: 'https://dalkkumi-shop.yusupwork.com/',
     id: 'project4',
   },
 ]
@@ -81,7 +60,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     title: 'How to Export Metadata from MDX for Next.js SEO',
-    description: 'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
+    description:
+      'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
     link: '/blog/example-mdx-metadata',
     uid: 'blog-1',
   },
