@@ -2,7 +2,7 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
+  video?: string
   id: string
 }
 
@@ -29,12 +29,18 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Dalkkumi Shop',
+    name: 'Vireshot',
     description:
-      'Your destination for K-pop imports and branded goods, with preorders for albums, lightsticks, and official merchandise.',
-    link: 'https://dalkkumi-shop.yusupwork.com/',
-    video: 'https://dalkkumi-shop.yusupwork.com/',
-    id: 'project4',
+      'AI-powered app builder that turns ideas into beautiful fullstack apps using prompts. Inspired by Lovable',
+    link: 'https://github.com/yusupscopes/vireshot',
+    id: 'project2',
+  },
+  {
+    name: 'Payrouter',
+    description:
+      'Unified payment orchestration gateway that routes transactions across multiple payment providers through a single API.',
+    link: 'https://github.com/yusupscopes/payrouter',
+    id: 'project1',
   },
 ]
 
