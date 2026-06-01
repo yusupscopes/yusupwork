@@ -2,7 +2,8 @@ type Project = {
   name: string
   description: string
   link: string
-  video?: string
+  image: string
+  tags: string[]
   id: string
 }
 
@@ -33,6 +34,10 @@ export const PROJECTS: Project[] = [
     description:
       'AI-powered app builder that turns ideas into beautiful fullstack apps using prompts. Inspired by Lovable',
     link: 'https://github.com/yusupscopes/vireshot',
+    // NOTE: GitHub OpenGraph CDN dependency. Migrate to local /public/screenshots/
+    // if these URLs change or for offline builds.
+    image: 'https://opengraph.githubassets.com/1/yusupscopes/vireshot',
+    tags: ['TypeScript', 'Next.js', 'AI'],
     id: 'project2',
   },
   {
@@ -40,6 +45,10 @@ export const PROJECTS: Project[] = [
     description:
       'Unified payment orchestration gateway that routes transactions across multiple payment providers through a single API.',
     link: 'https://github.com/yusupscopes/payrouter',
+    // NOTE: GitHub OpenGraph CDN dependency. Migrate to local /public/screenshots/
+    // if these URLs change or for offline builds.
+    image: 'https://opengraph.githubassets.com/1/yusupscopes/payrouter',
+    tags: ['Node.js', 'PostgreSQL', 'Redis'],
     id: 'project1',
   },
 ]
