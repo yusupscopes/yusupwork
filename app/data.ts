@@ -78,7 +78,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/yusup-work',
+    link: 'https://www.linkedin.com/in/yusupwork',
   },
   {
     label: 'Instagram',
