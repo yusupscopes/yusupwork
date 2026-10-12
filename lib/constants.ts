@@ -1,1 +1,1 @@
-export const WEBSITE_URL = 'https://yusupwork.com'
+export const WEBSITE_URL = 'https://yusupmaulana.com'
