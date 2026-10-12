@@ -8,7 +8,7 @@ Next.js 16 is installed: read the relevant guide in `node_modules/next/dist/docs
 
 ## Project
 
-This is Yusup Maulana's personal portfolio at https://yusupwork.com. It is a fork of the "Nim" template (github.com/ibelick/nim), which is why `package.json` is named `nim` and the README and INSTALLATION docs still describe the template. The stack is Next.js 16 (App Router), React 19, Tailwind CSS v4, Motion (`motion/react`) and MDX.
+This is Yusup Maulana's personal portfolio at https://yusupmaulana.com. It is a fork of the "Nim" template (github.com/ibelick/nim), which is why `package.json` is named `nim` and the README and INSTALLATION docs still describe the template. The stack is Next.js 16 (App Router), React 19, Tailwind CSS v4, Motion (`motion/react`) and MDX.
 
 ## Commands
 
@@ -16,8 +16,11 @@ This is Yusup Maulana's personal portfolio at https://yusupwork.com. It is a for
 npm run dev     # dev server on http://localhost:3000
 npm run build   # next build, then copies .next/static and public/ into .next/standalone/
 npm run start   # node .next/standalone/server.js (run build first)
-npm run lint    # next lint
+npm run preview # build with OpenNext and run locally in the Workers runtime (wrangler dev)
+npm run deploy  # build with OpenNext and deploy to Cloudflare Workers (needs `npx wrangler login`)
 ```
+
+`npm run lint` is broken: `next lint` was removed in Next 16.
 
 There is no test suite. Prettier is configured in `.prettierrc.json` (no semicolons, single quotes, trailing commas, Tailwind class sorting), but no script runs it. To format a file, run `npx prettier --write <file>`.
 
@@ -35,5 +38,7 @@ There is no test suite. Prettier is configured in `.prettierrc.json` (no semicol
 ## Images and deployment
 
 - Remote images used with `next/image` must have their host in `images.remotePatterns` in `next.config.mjs`. Currently allowed: `cdn.cosmos.so` and `opengraph.githubassets.com`. Project cards use GitHub OpenGraph URLs.
-- `output: 'standalone'`. The `Dockerfile` builds a node:20-alpine standalone image that serves on port 3000.
+- Production runs on **Cloudflare Workers** via `@opennextjs/cloudflare`. The config is in `wrangler.jsonc`: Worker `yusupmaulana`, custom domains `yusupmaulana.com` and `www.yusupmaulana.com`, and an `IMAGES` binding that serves `next/image` optimization. Build output goes to `.open-next/`.
+- **Next.js is pinned to `~16.3.8`.** Next 16.4 emits `.next/server/preview-props.json`, which `@opennextjs/cloudflare` 1.20.10 can't load, so every route returns a 500. Before upgrading Next, check adapter support and test with `npm run preview`.
+- `output: 'standalone'` and the `Dockerfile` (node:20-alpine on port 3000) are still there as an alternative to the Workers deploy.
 - `app/robots.ts` points to `/sitemap.xml`, but no `app/sitemap.ts` exists yet.
