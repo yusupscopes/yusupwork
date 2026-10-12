@@ -17,7 +17,7 @@ npm run dev     # dev server on http://localhost:3000
 npm run build   # next build, then copies .next/static and public/ into .next/standalone/
 npm run start   # node .next/standalone/server.js (run build first)
 npm run preview # build with OpenNext and run locally in the Workers runtime (wrangler dev)
-npm run deploy  # build with OpenNext and deploy to Cloudflare Workers (needs `npx wrangler login`)
+npm run deploy  # build with OpenNext and deploy to Cloudflare Workers manually (needs `npx wrangler login`)
 ```
 
 `npm run lint` is broken: `next lint` was removed in Next 16.
@@ -38,7 +38,7 @@ There is no test suite. Prettier is configured in `.prettierrc.json` (no semicol
 ## Images and deployment
 
 - Remote images used with `next/image` must have their host in `images.remotePatterns` in `next.config.mjs`. Currently allowed: `cdn.cosmos.so` and `opengraph.githubassets.com`. Project cards use GitHub OpenGraph URLs.
-- Production runs on **Cloudflare Workers** via `@opennextjs/cloudflare`. The config is in `wrangler.jsonc`: Worker `yusupmaulana`, custom domains `yusupmaulana.com` and `www.yusupmaulana.com`, and an `IMAGES` binding that serves `next/image` optimization. Build output goes to `.open-next/`.
+- Production runs on **Cloudflare Workers** via `@opennextjs/cloudflare`. The config is in `wrangler.jsonc`: Worker `yusupmaulana`, custom domains `yusupmaulana.com` and `www.yusupmaulana.com`, and an `IMAGES` binding that serves `next/image` optimization. Build output goes to `.open-next/`. `.github/workflows/deploy.yml` runs `npm run deploy` on every push to `main`, using the repo secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
 - **Next.js is pinned to `~16.3.8`.** Next 16.4 emits `.next/server/preview-props.json`, which `@opennextjs/cloudflare` 1.20.10 can't load, so every route returns a 500. Before upgrading Next, check adapter support and test with `npm run preview`.
 - `output: 'standalone'` and the `Dockerfile` (node:20-alpine on port 3000) are still there as an alternative to the Workers deploy.
-- `app/robots.ts` points to `/sitemap.xml`, but no `app/sitemap.ts` exists yet.
+- `app/sitemap.ts` builds `/sitemap.xml` from the home page plus the internal links in `BLOG_POSTS`. A post missing from `BLOG_POSTS` is also missing from the sitemap.
