@@ -28,28 +28,35 @@ type SocialLink = {
   link: string
 }
 
+// NOTE: Project images depend on the GitHub OpenGraph CDN. Migrate to local
+// /public/screenshots/ if these URLs change or for offline builds.
 export const PROJECTS: Project[] = [
+  {
+    name: 'Polka',
+    description:
+      'Create AI bots that each own a real cloud computer, with a shell, files and a desktop, and chat with them alone or in group chats where they hand work to each other.',
+    link: 'https://github.com/yusupscopes/polka',
+    image: 'https://opengraph.githubassets.com/1/yusupscopes/polka',
+    tags: ['TypeScript', 'AI Agents', 'Multi-agent'],
+    id: 'project1',
+  },
   {
     name: 'Vireshot',
     description:
-      'AI-powered app builder that turns ideas into beautiful fullstack apps using prompts. Inspired by Lovable',
+      'Build websites by chatting with AI. A coding agent writes a Next.js app in an isolated E2B cloud sandbox, with a live preview and the full source code in your browser.',
     link: 'https://github.com/yusupscopes/vireshot',
-    // NOTE: GitHub OpenGraph CDN dependency. Migrate to local /public/screenshots/
-    // if these URLs change or for offline builds.
     image: 'https://opengraph.githubassets.com/1/yusupscopes/vireshot',
     tags: ['TypeScript', 'Next.js', 'AI'],
     id: 'project2',
   },
   {
-    name: 'Payrouter',
+    name: 'AvaMeet',
     description:
-      'Unified payment orchestration gateway that routes transactions across multiple payment providers through a single API.',
-    link: 'https://github.com/yusupscopes/payrouter',
-    // NOTE: GitHub OpenGraph CDN dependency. Migrate to local /public/screenshots/
-    // if these URLs change or for offline builds.
-    image: 'https://opengraph.githubassets.com/1/yusupscopes/payrouter',
-    tags: ['Node.js', 'PostgreSQL', 'Redis'],
-    id: 'project1',
+      'AI video meetings: agents with custom instructions join your calls as a live voice via OpenAI Realtime, then write summaries with timestamped notes.',
+    link: 'https://github.com/yusupscopes/AvaMeet',
+    image: 'https://opengraph.githubassets.com/1/yusupscopes/AvaMeet',
+    tags: ['TypeScript', 'Next.js', 'OpenAI Realtime'],
+    id: 'project3',
   },
 ]
 
