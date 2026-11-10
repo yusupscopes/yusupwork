@@ -28,15 +28,15 @@ type SocialLink = {
   link: string
 }
 
-// NOTE: Project images depend on the GitHub OpenGraph CDN. Migrate to local
-// /public/screenshots/ if these URLs change or for offline builds.
+// Project images are the screenshots from each repo's README (docs/screenshot.png),
+// copied into public/screenshots/. Re-copy them when a repo's screenshot changes.
 export const PROJECTS: Project[] = [
   {
     name: 'Polka',
     description:
       'Create AI bots that each own a real cloud computer, with a shell, files and a desktop, and chat with them alone or in group chats where they hand work to each other.',
     link: 'https://github.com/yusupscopes/polka',
-    image: 'https://opengraph.githubassets.com/1/yusupscopes/polka',
+    image: '/screenshots/polka.png',
     tags: ['TypeScript', 'AI Agents', 'Multi-agent'],
     id: 'project1',
   },
@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
     description:
       'Build websites by chatting with AI. A coding agent writes a Next.js app in an isolated E2B cloud sandbox, with a live preview and the full source code in your browser.',
     link: 'https://github.com/yusupscopes/vireshot',
-    image: 'https://opengraph.githubassets.com/1/yusupscopes/vireshot',
+    image: '/screenshots/vireshot.png',
     tags: ['TypeScript', 'Next.js', 'AI'],
     id: 'project2',
   },
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
     description:
       'AI video meetings: agents with custom instructions join your calls as a live voice via OpenAI Realtime, then write summaries with timestamped notes.',
     link: 'https://github.com/yusupscopes/AvaMeet',
-    image: 'https://opengraph.githubassets.com/1/yusupscopes/AvaMeet',
+    image: '/screenshots/avameet.png',
     tags: ['TypeScript', 'Next.js', 'OpenAI Realtime'],
     id: 'project3',
   },
